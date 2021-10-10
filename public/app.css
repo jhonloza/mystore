@@ -498,6 +498,9 @@ label {
     text-align: justify;
     color: #aebcbd;
 }
+.card-img-top{
+    height: 40vh;
+}
 #login-form{
     padding: 5vh 0;
     margin: 10vh auto;
@@ -539,6 +542,8 @@ input{
     width: 25vw;
     border-width: 5px;
     padding: 1%;
+    margin: 5vh auto;
+    height: max-content;
 }
 .contador{
     width: 35%;

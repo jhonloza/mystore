@@ -9,30 +9,36 @@
 </head>
 <body>
     <div class="container">
-        @foreach ( $informacion as $datos)
-            <div class="card col-4 center">
-                <img class="card-img-top" src="{{$datos->imagen}}" alt="" srcset="">
-                <div class="card-body">
-                    <h5 class="card-title">{{$datos->nombre}}</h5>
-                    <h6 class="card-subtitle mb2 text-muted">{{$datos->marca_proveedor}}</h6>
-                    <p class="card-text">{{$datos->descripcion}}</p>
-                    <p class="card-text">Categoria: {{$datos->categoria}}</p>
-                    <p class="card-text">Precio Unitario: $ {{$datos->precio}}</p>
-                    <table>
-                        <tr>
-                            <td>Disponibles: {{$datos->cantidad}}</td>
-                            <td>
-                                Adquirir:
-                                <input class="contador" type="number" name="cantComprar" id="cantComprar" value="1">
-                            </td>
-                        </tr>
-                    </table>
-                    <div>
-                        <button class="btn btn-warning btn-comprar">Comprar</button>
+        <div class="mostrador">
+            <div class="row">
+            @foreach ( $informacion as $datos)
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{$datos->imagen}}" alt="" srcset="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$datos->nombre}}</h5>
+                        <h6 class="card-subtitle mb2 text-muted">{{$datos->marca_proveedor}}</h6>
+                        <p class="card-text">{{$datos->descripcion}}</p>
+                        <p class="card-text">Categoria: {{$datos->categoria}}</p>
+                        <p class="card-text">Precio Unitario: $ {{$datos->precio}}</p>
+                        <table>
+                            <tr>
+                                <td>Disponibles: {{$datos->cantidad}}</td>
+                                <td>
+                                    Adquirir:
+                                    <input class="contador" type="number" name="cantComprar" id="cantComprar" value="1">
+                                </td>
+                            </tr>
+                        </table>
+                        <div>
+                            <button class="btn btn-warning btn-comprar">Comprar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        @endforeach
+            @endforeach
+            </div>
+        </div>
     </div>
 </body>
 </html>
