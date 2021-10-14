@@ -20,73 +20,32 @@ class loginController extends Controller
             return redirect()->route('usuario');
         } elseif($usuario[0] != 'no-user'){
             return redirect()->route('usuario', compact('$usuario'));
+        } elseif (empty($usuario)) {
+            return view('login', compact('usuario'));
         } else {
             return view('login', compact('usuario'));
         }
-
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
@@ -109,8 +68,6 @@ class loginController extends Controller
             $usuarioSesion = [$usuarioActual->username, $usuarioActual->email];
         }
         $control->almacenarSesion($request, $usuarioSesion[0], $usuarioSesion[1]);
-        //SessionController->almacenarSesion($request, $usuarioSesion[0], $usuarioSesion[1]);
-        //return view('productos', compact('usuarioSesion'));
         return redirect()->action([ProductosController::class, 'index']);
     }
 }

@@ -110,6 +110,6 @@ class UsuarioController extends Controller
     public function cerrarSesion(Request $request){
         $control = new SessionController();
         $control->almacenarSesion($request, 'no-user', 'no-email');
-        return redirect()->route('inicio');
+        return redirect('/');
     }
 }

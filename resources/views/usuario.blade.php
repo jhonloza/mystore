@@ -25,6 +25,7 @@
         @endif
         <div class="col">
             <form method="post">
+                @csrf
                 <button type="submit" class="btn btn-danger"> Cerrar sesion</button>
             </form>
         </div>

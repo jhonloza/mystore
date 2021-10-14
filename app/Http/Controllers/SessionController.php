@@ -18,10 +18,10 @@ class SessionController extends Controller
     public function almacenarSesion(Request $request, $usuario, $email){
         if(empty($usuario) || ($usuario == 'no-user')){
             $request->session()->put(['usuario' => 'no-user', 'email' => 'no-email']);
-            echo 'No existe ese usuario';
+            //echo 'No existe ese usuario';
         } else {
             $request->session()->put(['usuario' => $usuario, 'email' => $email]);
-            echo 'datos agregados a la sesion';
+            //echo 'datos agregados a la sesion';
         }
 
     }
