@@ -16,12 +16,12 @@ class loginController extends Controller
     {
         $control = new SessionController();
         $usuario = $control->getSesion($request);
-        if($usuario[0] == 'admin'){
-            return redirect()->route('usuario');
+        if (empty($usuario)){
+            return view('login', compact('usuario'));
         } elseif($usuario[0] != 'no-user'){
             return redirect()->route('usuario', compact('$usuario'));
-        } elseif (empty($usuario)) {
-            return view('login', compact('usuario'));
+        } elseif ($usuario[0] == 'admin') {
+            return redirect()->route('usuario');
         } else {
             return view('login', compact('usuario'));
         }
