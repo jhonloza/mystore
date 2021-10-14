@@ -7,11 +7,14 @@ use Illuminate\Http\Request;
 use MongoDB\Driver\Manager;
 use MongoDB\Driver\Query;
 use MongoDB\Driver\ReadPreference;
+include 'SessionController.php';
 
 class ProductosController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $control = new SessionController();
+        $usuario = $control->getSesion($request);
         $host = "localhost";
         $port = "27017";
         //Conexion a mongo
@@ -22,7 +25,7 @@ class ProductosController extends Controller
         $query = new Query($filtrar, $options);
         $leerPreferencia = new ReadPreference(ReadPreference::RP_PRIMARY);
         $informacion = $conexion->executeQuery("tiendacomponenteselectronicos.productos", $query, $leerPreferencia);
-        return view('productos', compact('informacion'));
+        return view('productos', compact('informacion', 'usuario'));
     }
 
     public function create()

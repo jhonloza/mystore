@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "61631dff9c5194f096287eb5"
+  },
+  "nombre": "Memoria RAM",
+  "marca_proveedor": "Genius",
+  "descripcion": "DDR3 16GB 3666MHz para computador de escritorio \"PC\"",
+  "cantidad": 10,
+  "precio": 57.99,
+  "categoria": "portatil",
+  "imagen": "https://m.media-amazon.com/images/I/81hOBtiHDpL._AC_SL1500_.jpg"
+},{
+  "_id": {
+    "$oid": "61635646bd11814ffa6626cf"
+  },
+  "nombre": "ssd",
+  "marca_proveedor": "‎Samsung Electronics DAV",
+  "descripcion": "Samsung 870 QVO-Series Hard Disk Driver 512GB",
+  "cantidad": 6,
+  "precio": 169.99,
+  "categoria": "PC",
+  "imagen": "https://m.media-amazon.com/images/I/91S1PIX+yWL._AC_SL1500_.jpg"
+},{
+  "_id": {
+    "$oid": "61635a49bd11814ffa6626d0"
+  },
+  "nombre": "Disco Duro",
+  "marca_proveedor": "SEAGATE",
+  "descripcion": "Disco duro externo portátil Seagate de 5 TB",
+  "cantidad": 4,
+  "precio": 106.99,
+  "categoria": "Portatil",
+  "imagen": "https://magnamicrom.com/wp-content/uploads/2021/05/HDD-SEAGATE-BASIC-EXT.-1TB-G6M.jpg"
+},{
+  "_id": {
+    "$oid": "61635aa5bd11814ffa6626d1"
+  },
+  "nombre": "Mainboard",
+  "marca_proveedor": "GIGABYTE",
+  "descripcion": "GIGABYTE B450 AORUS PRO Wi-Fi ",
+  "cantidad": 10,
+  "precio": 122,
+  "categoria": "PC",
+  "imagen": "https://m.media-amazon.com/images/I/81kcEq5tMNL._AC_SL1500_.jpg"
+}]

@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "6168282fe5af9e518c0b023c"
+  },
+  "usuario": "sara",
+  "email": "sara@gmail.com",
+  "nombre": "ssd",
+  "marca": "Samsung Electronics DAV",
+  "descripcion_categoria": "Samsung Electronics DAV - Samsung 870 QVO-Series",
+  "cantidad": 1,
+  "precio_unitario": 169.99,
+  "fecha": "2021-10-10",
+  "total": 259.45
+},{
+  "_id": {
+    "$oid": "61682959e5af9e518c0b023d"
+  },
+  "usuario": "sara",
+  "email": "sara@gmail.com",
+  "nombre": "teclado",
+  "marca": "RAZER",
+  "descripcion_categoria": "RAZER - Teclado gaming",
+  "cantidad": 1,
+  "precio_unitario": 39.99,
+  "fecha": "2021-10-10",
+  "total": 259.45
+},{
+  "_id": {
+    "$oid": "61682988e5af9e518c0b023e"
+  },
+  "usuario": "sara",
+  "email": "sara@gmail.com",
+  "nombre": "mouse",
+  "marca": "RAZER",
+  "descripcion_categoria": "RAZER - Ratón para juegos DeathAdder V2: Sensor óptico de 20 K DPI",
+  "cantidad": 1,
+  "precio_unitario": 49.47,
+  "fecha": "2021-10-10",
+  "total": 259.45
+}]

@@ -1,36 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/app.css">
-    <script src="app.js"></script>
-    <title>Inicio</title>
-</head>
-<body>
-    <div>
+@extends('layouts.plantilla')
+@section('title', 'Inicio')
 
-    </div>
-    <div class="container">
-        <!--Barra de nav-->
-
-        <header class="main-header">
-            <div class="container container--flex">
-              <div class="main-header__container">
-                <h1 class="main-header__title">Sadita Store</h1>
-                <span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
-                <nav class="main-nav" id="main-nav">
-                  <ul class="menu">
-                    <li class="menu__item"><a href="/" class="menu__link">Inicio</a></li>
-                    <li class="menu__item"><a href="" class="menu__link">Acerca de</a></li>
-                    <li class="menu__item"><a href="" class="menu__link">Comprar</a></li>
-                    <li class="menu__item"><a href="" class="menu__link">Contactos</a></li>
-                    <li class="menu__item"><a href="/login" class="main-header__btn">Mi Cuenta <i class="fas fa-shopping-cart"></i></a></li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </header>
+@section('content')
+<div class="sesion-actual">
+    @if (empty($usuario))
+        <li >No hay usuario</li>
+    @else
+        @foreach ($usuario as $clave => $sesion)
+            <input id="user{{$clave}}" value="{{$sesion}}" readonly>
+        @endforeach
+    @endif
+</div>
           <div class="container-slider">
             <div class="slider" id="slider">
               <div class="slider__section">
@@ -144,37 +124,5 @@
               </section>
             </div>
           </main>
-          <footer class="main-footer">
-            <div class="footer__section">
-              <h2 class="footer__title">About Us</h2>
-              <p class="footer__txt">Curabitur non nulla sit amet nislinit tempus convallis quis ac lectus. lac inia eget consectetur sed, convallis at tellus. Nulla porttitor accumsana tincidunt.</p>
-            </div>
-            <div class="footer__section">
-              <h2 class="footer__title">Location :</h2>
-              <p class="footer__txt">0926k 4th block building, king Avenue, New York City</p>
-              <h2 class="footer__title">Contact</h2>
-              <p class="footer__txt">Phone : +121 098 8907 9987</p>
-              <p class="footer__txt">Email : info@example.com</p>
-            </div>
-            <div class="footer__section">
-              <h2 class="footer__title">Quick Links</h2>
-              <a href="" class="footer__link">Home</a>
-              <a href="" class="footer__link">About</a>
-              <a href="" class="footer__link">Error</a>
-              <a href="" class="footer__link">Shop</a>
-              <a href="" class="footer__link">Contact Us</a>
-            </div>
-            <div class="footer__section">
-              <h2 class="footer__title">Sign up for your offers</h2>
-              <p class="footer__txt">By subscribing to our mailing list you will always get latest news and updates from us.</p>
-              <input type="email" class="footer__input" placeholder="Enter your email">
-            </div>
-            <p class="copy">© 2021 Goggles. All Rights Reserved | Design by W3Layouts</p>
-          </footer>
 
-
-
-
-    </div>
-</body>
-</html>
+@endsection

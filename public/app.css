@@ -29,7 +29,7 @@ img {
   font-family: "Poppins";
 }
 .main-header__container{
-  display: flex;
+  width: 100vw;
   justify-content: space-between;
   align-items: center;
 }
@@ -96,7 +96,14 @@ img {
   width: 50%;
 }
 
-
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 60px;
+    line-height: 60px;
+    background-color: #000;
+}
 
 .main {
   padding: 0 20px;
@@ -550,4 +557,7 @@ input{
 }
 .btn-comprar{
     width: 50%;
+}
+.sesion-actual{
+    display: none;
 }

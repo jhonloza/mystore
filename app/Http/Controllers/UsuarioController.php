@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use MongoDB\Driver\Manager;
 use MongoDB\Driver\Query;
 use MongoDB\Driver\ReadPreference;
+include 'SessionController.php';
 
 class UsuarioController extends Controller
 {
@@ -15,25 +16,30 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        /*if($usuario != null){
-            $host = "localhost";
-            $port = "27017";
-            //Conexion a mongo
-            $conexion = new Manager("mongodb://$host:$port");
-            //variables donde se almacena informacion
-            $filtrar = array();
-            $options = array();
+        $control = new SessionController();
+        $usuario = $control->getSesion($request);
+        $host = "localhost";
+        $port = "27017";
+        //Conexion a mongo
+        $conexion = new Manager("mongodb://$host:$port");
+        //variables donde se almacena informacion
+        $filtrar = array();
+        $options = array();
+        $query = new Query($filtrar, $options);
+        $leerPreferencia = new ReadPreference(ReadPreference::RP_PRIMARY);
+        $informacionUsuarios = $conexion->executeQuery("tiendacomponenteselectronicos.usuario", $query, $leerPreferencia);
+        $informacionProductos = $conexion->executeQuery("tiendacomponenteselectronicos.productos", $query, $leerPreferencia);
+        $informacionMarcaProveedor = $conexion->executeQuery("tiendacomponenteselectronicos.marca_proveedor", $query, $leerPreferencia);
+        if($usuario[0] != 'admin'){
+            $filtrar = ['usuario' => $usuario[0], 'email' => $usuario[1]];
             $query = new Query($filtrar, $options);
-            $leerPreferencia = new ReadPreference(ReadPreference::RP_PRIMARY);
-            $informacion = $conexion->executeQuery("tiendacomponenteselectronicos.usuario", $query, $leerPreferencia);
-            echo '<script type="text/javascript">alert("Conexion correcta");</script>';
-            return view('usuario', compact('informacion'));
-        } else{
-            return redirect('/');
-        }*/
-        return view('usuario');
+            $informacionCompras = $conexion->executeQuery("tiendacomponenteselectronicos.carrito", $query);
+        } else {
+            $informacionCompras = $conexion->executeQuery("tiendacomponenteselectronicos.carrito", $query);
+        }
+        return view('usuario', compact('usuario', 'informacionUsuarios','informacionProductos','informacionMarcaProveedor','informacionCompras'));
     }
 
     /**
@@ -100,5 +106,10 @@ class UsuarioController extends Controller
     public function destroy(Usuario $usuario)
     {
         //
+    }
+    public function cerrarSesion(Request $request){
+        $control = new SessionController();
+        $control->almacenarSesion($request, 'no-user', 'no-email');
+        return redirect()->route('inicio');
     }
 }

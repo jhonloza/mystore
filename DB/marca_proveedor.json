@@ -1,0 +1,9 @@
+[{
+  "_id": {
+    "$oid": "616321199c5194f096287eb6"
+  },
+  "nombre": "Genius",
+  "descripcion": "Proveedora de componentes de computador",
+  "telefono": "+1 987 665 4321",
+  "direccion": "EEUU"
+}]
