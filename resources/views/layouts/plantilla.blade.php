@@ -18,9 +18,7 @@
             <nav class="main-nav" id="main-nav">
               <ul class="menu">
                 <li class="menu__item"><a href="/" class="menu__link">Inicio</a></li>
-                <li class="menu__item"><a href="" class="menu__link">Acerca de</a></li>
                 <li class="menu__item"><a href="/productos" class="menu__link">Comprar</a></li>
-                <li class="menu__item"><a href="" class="menu__link">Contactos</a></li>
                 <li class="menu__item"><a href="/login" class="menu__link">Mi Cuenta <i class="fas fa-shopping-cart"></i></a></li>
               </ul>
             </nav>

@@ -14,27 +14,27 @@
           <div class="container-slider">
             <div class="slider" id="slider">
               <div class="slider__section">
-                <img src="https://images.pexels.com/photos/2097085/pexels-photo-2097085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="slider__img">
+                <img src="https://larepublica.pe/resizer/Nf7NyFebkqcx6yknHNrYRavwtSA=/1250x735/top/smart/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/Y6YFS7RL4ZEB3BXDE56JOIJRTU.jpg" alt="" class="slider__img">
                 <div class="slider__content">
                   <h2 class="slider__title">Women’s eyewear</h2>
                   <p class="slider__txt">Cool summer sale 50% off</p>
-                  <a href="" class="btn-shop">SHOP NOW</a>
+                  <a href="/login" class="btn-shop">SHOP NOW</a>
                 </div>
               </div>
               <div class="slider__section">
-                <img src="https://images.pexels.com/photos/3414327/pexels-photo-3414327.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="slider__img">
+                <img src="https://larepublica.pe/resizer/Nf7NyFebkqcx6yknHNrYRavwtSA=/1250x735/top/smart/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/Y6YFS7RL4ZEB3BXDE56JOIJRTU.jpg" alt="" class="slider__img">
                 <div class="slider__content">
                   <h2 class="slider__title">Women’s eyewear</h2>
                   <p class="slider__txt">Cool summer sale 50% off</p>
-                  <a href="" class="btn-shop">SHOP NOW</a>
+                  <a href="/login" class="btn-shop">SHOP NOW</a>
                 </div>
               </div>
               <div class="slider__section">
-                <img src="https://images.pexels.com/photos/2846815/pexels-photo-2846815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="slider__img">
+                <img src="https://larepublica.pe/resizer/Nf7NyFebkqcx6yknHNrYRavwtSA=/1250x735/top/smart/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/Y6YFS7RL4ZEB3BXDE56JOIJRTU.jpg" alt="" class="slider__img">
                 <div class="slider__content">
                   <h2 class="slider__title">Women’s eyewear</h2>
                   <p class="slider__txt">Cool summer sale 50% off</p>
-                  <a href="" class="btn-shop">SHOP NOW</a>
+                  <a href="/login" class="btn-shop">SHOP NOW</a>
                 </div>
               </div>
               <div class="slider__section">
@@ -62,7 +62,7 @@
                   <i class="product__icon fas fa-cart-plus"></i>
                 </div>
                 <div class="product">
-                  <img src="https://www.nunsarangoptical.com/blog/wp-content/uploads/2019/03/nunsarang-usar-lentes-de-sol-mas-seguido.jpg" alt="" class="product__img">
+                  <img src="https://m.media-amazon.com/images/I/81hOBtiHDpL._AC_SL1500_.jpg" alt="" class="product__img">
                   <div class="product__description">
                     <h3 class="product__title">Opium (Grey)</h3>
                     <span class="product__price">$575.00</span>
@@ -70,7 +70,7 @@
                   <i class="product__icon fas fa-cart-plus"></i>
                 </div>
                 <div class="product">
-                  <img src="https://c.pxhere.com/photos/91/35/glasses_accessoirs_fashion_sunglasses_sun_modern_backgrounds_elegance-1042997.jpg!d" alt="" class="product__img">
+                  <img src="https://m.media-amazon.com/images/I/91S1PIX+yWL._AC_SL1500_.jpg" alt="" class="product__img">
                   <div class="product__description">
                     <h3 class="product__title">Kenneth Cole</h3>
                     <span class="product__price">$575.00</span>
@@ -78,7 +78,7 @@
                   <i class="product__icon fas fa-cart-plus"></i>
                 </div>
                 <div class="product">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Gafas_de_sol_Rayban_Aviador.jpg" alt="" class="product__img">
+                  <img src="https://magnamicrom.com/wp-content/uploads/2021/05/HDD-SEAGATE-BASIC-EXT.-1TB-G6M.jpg" alt="" class="product__img">
                   <div class="product__description">
                     <h3 class="product__title">Farenheit Oval</h3>
                     <span class="product__price">$325.00</span>
@@ -86,40 +86,24 @@
                   <i class="product__icon fas fa-cart-plus"></i>
                 </div>
               </section>
-              <section class="container__testimonials">
-                <h2 class="section__title">Testimonials</h2>
-                <h3 class="testimonial__title">Anamaria </h3>
-                <p class="testimonial__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, perferendis, animi! Numquam quasi similique, fuga sint. Nulla veritatis quia nemo, magni, necessitatibus impedit inventore, provident culpa repellat esse a quo.</p>
-              </section>
-
-              <div class="container-editor">
-                <div class="editor__item">
-                  <img src="https://pixnio.com/free-images/2017/05/31/2017-05-31-10-27-12.jpg" alt="" class="editor__img">
-                  <p class="editor__circle">EXPRESS YOUR STYLE NOW</p>
-                </div>
-                <div class="editor__item">
-                  <img src="https://images.pexels.com/photos/261856/pexels-photo-261856.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="editor__img">
-                  <p class="editor__circle">EXPRESS YOUR STYLE NOW</p>
-                </div>
-              </div>
               <section class="container-tips">
                 <div class="tip">
                   <i class="far fa-hand-paper"></i>
                   <h2 class="tip__title">Satisfaction Guaranteed</h2>
                   <p class="tip__txt">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit</p>
-                  <a href="" class="btn-shop">SHOP NOW</a>
+                  <a href="/login" class="btn-shop">SHOP NOW</a>
                 </div>
                 <div class="tip">
                  <i class="fas fa-rocket"></i>
                   <h2 class="tip__title">Fast Shipping</h2>
                   <p class="tip__txt">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-                  <a href="" class="btn-shop">SHOP NOW</a>
+                  <a href="/login" class="btn-shop">SHOP NOW</a>
                 </div>
                 <div class="tip">
                   <i class="fas fa-cog"></i>
                   <h2 class="tip__title">UV Protection</h2>
                   <p class="tip__txt">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-                  <a href="" class="btn-shop">SHOP NOW</a>
+                  <a href="/login" class="btn-shop">SHOP NOW</a>
                 </div>
               </section>
             </div>

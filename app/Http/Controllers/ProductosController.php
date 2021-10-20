@@ -7,14 +7,20 @@ use Illuminate\Http\Request;
 use MongoDB\Driver\Manager;
 use MongoDB\Driver\Query;
 use MongoDB\Driver\ReadPreference;
+use Livewire\Component;
 include 'SessionController.php';
 
 class ProductosController extends Controller
 {
     public function index(Request $request)
     {
+
         $control = new SessionController();
+
         $usuario = $control->getSesion($request);
+        if(empty($usuario)){
+            $control->almacenarSesion($request, 'no-user', 'no-email');
+        }
         $host = "localhost";
         $port = "27017";
         //Conexion a mongo
@@ -52,13 +58,9 @@ class ProductosController extends Controller
     {
         //
     }
+    public function addCarrito($sesion1, $sesion2, $nombre, $marca_proveedor, $descripcioncategoria, $cant, $precio, $date, $total, $confir){
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Producto  $producto
-     * @return \Illuminate\Http\Response
-     */
+    }
     public function destroy()
     {
         //

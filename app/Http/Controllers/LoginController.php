@@ -19,7 +19,7 @@ class loginController extends Controller
         if (empty($usuario)){
             return view('login', compact('usuario'));
         } elseif($usuario[0] != 'no-user'){
-            return redirect()->route('usuario', compact('$usuario'));
+            return redirect()->route('usuario', compact('usuario'));
         } elseif ($usuario[0] == 'admin') {
             return redirect()->route('usuario');
         } else {

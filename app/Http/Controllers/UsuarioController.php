@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use MongoDB\Driver\Manager;
 use MongoDB\Driver\Query;
 use MongoDB\Driver\ReadPreference;
+use MongoDB\BSON\ObjectId;
 include 'SessionController.php';
 
 class UsuarioController extends Controller
@@ -41,68 +42,26 @@ class UsuarioController extends Controller
         }
         return view('usuario', compact('usuario', 'informacionUsuarios','informacionProductos','informacionMarcaProveedor','informacionCompras'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @return \Illuminate\Http\Response
-     */
     public function show(Usuario $usuario)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Usuario $usuario)
     {
         //
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Usuario  $usuario
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Usuario $usuario)
     {
         //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Usuario $usuario)
     {
         //
@@ -111,5 +70,36 @@ class UsuarioController extends Controller
         $control = new SessionController();
         $control->almacenarSesion($request, 'no-user', 'no-email');
         return redirect('/');
+    }
+    public function editarProducto($idprod){
+        //$datos = [$idprod];
+        //echo 'datos : '.$datos[0];
+        $host = "localhost";
+        $port = "27017";
+        //Conexion a mongo
+        $conexion = new Manager("mongodb://$host:$port");
+        //variables donde se almacena informacion
+        $id = new ObjectId($idprod);
+        $filtrar = ['_id' => $id];
+        $options = array();
+        $query = new Query($filtrar, $options);
+        $informacionProductos = $conexion->executeQuery("tiendacomponenteselectronicos.productos", $query);
+        return view('editarProducto', compact('informacionProductos'));
+        /*foreach ($informacionProductos as $value) {
+            echo '<div>'.$value->nombre.'</div>';
+        }*/
+    }
+    public function eliminarProducto($idprod){
+        $host = "localhost";
+        $port = "27017";
+        //Conexion a mongo
+        $conexion = new Manager("mongodb://$host:$port");
+        //variables donde se almacena informacion
+        $id = new ObjectId($idprod);
+        $filtrar = ['_id' => $id];
+        $options = array();
+        $query = new Query($filtrar, $options);
+        $informacionProductos = $conexion->executeQuery("tiendacomponenteselectronicos.productos", $query);
+        return view('eliminarProducto', compact('informacionProductos'));
     }
 }

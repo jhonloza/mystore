@@ -101,7 +101,7 @@ class RegisterController extends Controller
             echo'<script type="text/javascript">alert("Usuario creado correctamente");</script>';
             return view('welcome');
         } else {
-            echo'<script type="text/javascript">alert("Usuario creado correctamente");</script>';
+            echo'<script type="text/javascript">alert("fallo al crear Usuario creado correctamente");</script>';
         }
     }
 }

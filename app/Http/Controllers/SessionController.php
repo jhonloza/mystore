@@ -12,7 +12,7 @@ class SessionController extends Controller
             //echo $request->session()->get('email');
             return $datosSesion=[$request->session()->get('usuario'), $request->session()->get('email')];
         } else {
-            echo 'no hay usuario';
+            echo '<p id="ua">no hay usuario</p>';
         }
     }
     public function almacenarSesion(Request $request, $usuario, $email){
