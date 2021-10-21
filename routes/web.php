@@ -41,3 +41,4 @@ Route::post('/usuario/eliminarProducto', [EliminarProductoController::class, 'el
 
 Route::post('/carrito/{idprod}', [ProductosController::class, 'añadirCarrito'])->name('addProd');
 Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index');
+Route::post('/carrito', [CarritoController::class, 'confirmarPago']);

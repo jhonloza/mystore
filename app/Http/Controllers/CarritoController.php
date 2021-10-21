@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use MongoDB\Driver\BulkWrite;
 use MongoDB\Driver\Manager;
 use MongoDB\Driver\Query;
 use MongoDB\Driver\ReadPreference;
@@ -100,5 +100,29 @@ class CarritoController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function confirmarPago(Request $request){
+        $usuariopago = $request->usuariopago;
+
+        $email = $request->email;
+        $fecha = $request->fecha;
+        $total = $request->totalp;
+        $confirmacion = 'si';
+        $host = "localhost";
+        $port = "27017";
+        //Conexion a mongo
+        $conexion = new Manager("mongodb://$host:$port");
+        //variables donde se almacena informacion
+        $bulkWrite = new BulkWrite;
+        $bulkWrite->update(['usuario' => $usuariopago, 'email' => $email, 'fecha' => $fecha],
+        ['$set' => ['total' => $total, 'confirmacion' => $confirmacion]], ['multi' => true, 'upsert' => true]);
+        $resultado = $conexion->executeBulkWrite('tiendacomponenteselectronicos.carrito', $bulkWrite);
+        if($resultado->getModifiedCount() != 0){
+            echo '<script type="text/javascript">alert("Compra realizada correctamente");</script>';
+            return view('welcome');
+        } else{
+            echo'<script type="text/javascript">alert("Fallo al realizar la compra");</script>';
+        }
+        //echo $usuariopago.' - '.$email.' - '.$fecha.' - '.$total.' - '.$confirmacion.' - ';
     }
 }
