@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use MongoDB\Driver\Manager;
 use MongoDB\Driver\Query;
 use MongoDB\Driver\ReadPreference;
-use Livewire\Component;
+use MongoDB\BSON\ObjectId;
+use MongoDB\Driver\BulkWrite;
 include 'SessionController.php';
 
 class ProductosController extends Controller
@@ -58,11 +59,51 @@ class ProductosController extends Controller
     {
         //
     }
-    public function addCarrito($sesion1, $sesion2, $nombre, $marca_proveedor, $descripcioncategoria, $cant, $precio, $date, $total, $confir){
+    public function añadirCarrito($idprod, Request $request){
 
+        $control = new SessionController();
+        $usuario = $control->getSesion($request);
+        if(empty($usuario) || ($usuario[0] == 'no-user')){
+            return redirect('login');
+        }
+        $host = "localhost";
+        $port = "27017";
+        //Conexion a mongo
+        $conexion = new Manager("mongodb://$host:$port");
+        //variables donde se almacena informacion
+        $id = new ObjectId($idprod);
+        $filtrar = ['_id' => $id];
+        $options = array();
+        $query = new Query($filtrar, $options);
+        $informacionProductos = $conexion->executeQuery("tiendacomponenteselectronicos.productos", $query);
+        $nuevocarrito = [];
+        foreach ($informacionProductos as $value) {
+            $nuevocarrito = ['usuario' => $usuario[0],
+            'email' => $usuario[1],
+            'nombre' => $value->nombre,
+            'marca' => $value->marca_proveedor,
+            'descripcion_categoria' => $value->descripcion.' - '.$value->categoria,
+            'cantidad' => 1,
+            'precio_unitario' => $value->precio,
+            'fecha' => date('Y-n-j'),
+            'total' => 0,
+            'confirmacion' => 'no'];
+        }
+        //echo 'carrito: '.$nuevocarrito['usuario'];
+        $bulkWrite = new BulkWrite;
+        $bulkWrite->insert($nuevocarrito);
+        $registrado = $conexion->executeBulkWrite('tiendacomponenteselectronicos.carrito', $bulkWrite);
+        //echo 'carrito : '.$nuevocarrito['usuario'];
+        if($registrado->getInsertedCount() == 1){
+            echo'<script type="text/javascript">alert("Producto agregado al carrito");</script>';
+            return redirect('carrito');
+        } else {
+            echo'<script type="text/javascript">alert("fallo al crear Usuario creado correctamente");</script>';
+        }
     }
     public function destroy()
     {
         //
     }
+
 }

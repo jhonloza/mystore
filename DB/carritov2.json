@@ -1,0 +1,85 @@
+[{
+  "_id": {
+    "$oid": "6170d47a050352b12e3111d1"
+  },
+  "usuario": "sara",
+  "email": "sara@gmail.com",
+  "nombre": "mouse",
+  "marca": "RAZER",
+  "descripcion_categoria": "RAZER - Ratón para juegos DeathAdder V2: Sensor óptico de 20 K DPI",
+  "cantidad": 1,
+  "precio_unitario": 49.47,
+  "fecha": "2021-10-10",
+  "total": 259.45,
+  "confirmacion": "si"
+},{
+  "_id": {
+    "$oid": "6170d48d050352b12e3111d2"
+  },
+  "usuario": "sara",
+  "email": "sara@gmail.com",
+  "nombre": "mouse",
+  "marca": "RAZER",
+  "descripcion_categoria": "RAZER - Ratón para juegos DeathAdder V2: Sensor óptico de 20 K DPI",
+  "cantidad": 1,
+  "precio_unitario": 49.47,
+  "fecha": "2021-10-10",
+  "total": 259.45,
+  "confirmacion": "si"
+},{
+  "_id": {
+    "$oid": "6170d48e050352b12e3111d3"
+  },
+  "usuario": "sara",
+  "email": "sara@gmail.com",
+  "nombre": "mouse",
+  "marca": "RAZER",
+  "descripcion_categoria": "RAZER - Ratón para juegos DeathAdder V2: Sensor óptico de 20 K DPI",
+  "cantidad": 1,
+  "precio_unitario": 49.47,
+  "fecha": "2021-10-10",
+  "total": 259.45,
+  "confirmacion": "si"
+},{
+  "_id": {
+    "$oid": "6170d490050352b12e3111d4"
+  },
+  "usuario": "sara",
+  "email": "sara@gmail.com",
+  "nombre": "mouse",
+  "marca": "RAZER",
+  "descripcion_categoria": "RAZER - Ratón para juegos DeathAdder V2: Sensor óptico de 20 K DPI",
+  "cantidad": 1,
+  "precio_unitario": 49.47,
+  "fecha": "2021-10-10",
+  "total": 259.45,
+  "confirmacion": "si"
+},{
+  "_id": {
+    "$oid": "6170d6a4050352b12e3111d5"
+  },
+  "usuario": "sara",
+  "email": "sara@gmail.com",
+  "nombre": "mouse",
+  "marca": "RAZER",
+  "descripcion_categoria": "RAZER - Ratón para juegos DeathAdder V2: Sensor óptico de 20 K DPI",
+  "cantidad": 1,
+  "precio_unitario": 49.47,
+  "fecha": "2021-10-21",
+  "total": 259.45,
+  "confirmacion": "no"
+},{
+  "_id": {
+    "$oid": "61713c4b9303fc0983212ec3"
+  },
+  "usuario": "sara",
+  "email": "sara@gmail.com",
+  "nombre": "Memoria RAM",
+  "marca": "Genius",
+  "descripcion_categoria": "DDR3 16GB 3666MHz para computador de escritorio \"PC\" - portatil",
+  "cantidad": 1,
+  "precio_unitario": "47.99",
+  "fecha": "2021-10-21",
+  "total": 0,
+  "confirmacion": "no"
+}]

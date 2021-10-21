@@ -20,7 +20,6 @@
             <div class="card">
                 <img class="card-img-top" src="{{$datos->imagen}}" alt="" srcset="">
                 <div class="card-body">
-                    <p style="display: none" class="card-text">{{$datos->_id}}</p>
                     <h5 class="card-title">{{$datos->nombre}}</h5>
                     <h6 class="card-subtitle mb2 text-muted">{{$datos->marca_proveedor}}</h6>
                     <p class="card-text">{{$datos->descripcion}}</p>
@@ -29,7 +28,14 @@
                     <table>
                         <tr>
                             <td>Disponibles: {{$datos->cantidad}}</td>
-                            <td><button wire:click="addCarrito({{$sesion[0]}}, {{$sesion[1]}}, {{$datos->nombre}}, {{$datos->marca_proveedor}}, {{$datos->descripcion}}.' - '.{{$datos->categoria}}, 1, {{$datos->precio}}, date('Y-m-d'), 0, 'no')" class="btn btn-warning btn-comprar">Añadir a carrito</button></td>
+                            <td>
+                                <form action="{{ route('addProd', ['idprod' => $datos->_id]); }}" method="post">
+                                    @csrf
+                                    <button class="btn btn-warning btn-comprar">
+                                        Añadir a carrito
+                                    </button>
+                                </form>
+                            </td>
 
                         </tr>
                     </table>
@@ -42,6 +48,8 @@
         </div>
     </div>
 </div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 <div>&nbsp;</div>
 <div>&nbsp;</div>
 

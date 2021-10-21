@@ -68,6 +68,13 @@ class loginController extends Controller
             $usuarioSesion = [$usuarioActual->username, $usuarioActual->email];
         }
         $control->almacenarSesion($request, $usuarioSesion[0], $usuarioSesion[1]);
-        return redirect()->action([ProductosController::class, 'index']);
+
+        if($usuarioSesion[0] == ''){
+            echo'<script type="text/javascript">alert("Credenciales incorrectas");</script>';
+            return view('login');
+        } else {
+            return redirect()->action([ProductosController::class, 'index']);
+        }
+
     }
 }

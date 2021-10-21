@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\EditarProductoController;
 use App\Http\Controllers\EliminarProductoController;
 use App\Http\Controllers\HomeController;
@@ -30,7 +31,6 @@ Route::post('/register', [RegisterController::class, 'registrar']);
 Route::post('/usuario', [UsuarioController::class, 'cerrarSesion']);
 Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario');
 Route::get('/productos', [ProductosController::class, 'index'])->name('productos');
-
 Route::get('/sesion/get', [SessionController::class, 'getSesion'])->name('sesion.get');
 Route::get('/sesion/set', [SessionController::class, 'almacenarSesion'])->name('sesion.almacenar');
 Route::get('/sesion/remove', [SessionController::class, 'eliminarSesion'])->name('sesion.eliminar');
@@ -38,3 +38,6 @@ Route::post('/usuario/editarProducto/{idprod}', [UsuarioController::class, 'edit
 Route::post('/usuario/eliminarProducto/{idprod}', [UsuarioController::class, 'eliminarProducto'])->name('deleteProd');
 Route::post('/usuario/editarProducto', [EditarProductoController::class, 'actualizarProd'])->name('actualizarProd');
 Route::post('/usuario/eliminarProducto', [EliminarProductoController::class, 'eliminarProducto'])->name('eliminarProd');
+
+Route::post('/carrito/{idprod}', [ProductosController::class, 'añadirCarrito'])->name('addProd');
+Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index');
